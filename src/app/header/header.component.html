@@ -1,0 +1,11 @@
+<nav class="border-b fixed w-full top-0 h-20 px-96 bg-white flex flex-row justify-between items-center">
+  <ul class="flex flex-row gap-2">
+    <li routerLinkActive="bg-blue-50" [routerLinkActiveOptions]="{exact: true}" class="bg-white rounded hover:bg-blue-50 duration-100 text-blue-600">
+      <a class="inline-block py-2 px-4" routerLink="/" >Accueil</a>
+    </li>
+    <li *ngFor="let route of routes" routerLinkActive="bg-blue-50" class="bg-white rounded hover:bg-blue-50 duration-100 text-blue-600">
+      <a class="inline-block py-2 px-4" routerLink="{{ route.path }}">{{ route.name }}</a>
+    </li>
+  </ul>
+  <button (click)=onLogOut() class="bg-white rounded hover:bg-blue-50 duration-100 text-blue-600 py-2 px-4">Logout</button>
+</nav>
